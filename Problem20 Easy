@@ -1,0 +1,21 @@
+'''
+
+'''
+
+class Solution(object):
+    def isValid(self, s):
+        left=[] #stores next char
+
+        for c in s:
+            if c in ['[', '(', '{']:
+                left.append(c) # stores a left bracket only
+            elif c==')' and left[-1]=='(' and len(left)!=0:
+                left.pop  # Remove first in list. No longer needed.
+            elif c=='}' and left[-1]=='{' and len(left)!=0:
+                left.pop # Remove first in list. No longer needed.
+            elif c=='}' and left[-1]=='{' and len(left)!=0:
+                left.pop # Remove first in list. No longer needed.
+            else:
+                return False
+        return True # Cycled through entire s String without discovering a False statement
+        
