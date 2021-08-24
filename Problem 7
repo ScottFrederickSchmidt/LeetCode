@@ -13,6 +13,8 @@
 #Output: 21
 #Note:
 #Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+e:
+#Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
 #Approach 1: Pop and Push Digits & Check before Overflow
 #Intuition
@@ -31,20 +33,3 @@
 #temp = rev * 10 + pop;
 #rev = temp;
 #However, this approach is dangerous, because the statement \text{temp} = \text{rev} \cdot 10 + \text{pop}temp=rev⋅10+pop can cause overflow.
-
-#Luckily, it is easy to check beforehand whether or this statement would cause an overflow.
-#To explain, lets assume that \text{rev}rev is positive.
-#If temp = \text{rev} \cdot 10 + \text{pop}temp=rev⋅10+pop causes overflow, then it must be that \text{rev} \geq \frac{INTMAX}{10}rev≥
-#10
-#INTMAX
-
-# If \text{rev} > \frac{INTMAX}{10}rev>
-# 10
-# INTMAX
-
-#  , then temp = \text{rev} \cdot 10 + \text{pop}temp=rev⋅10+pop is guaranteed to overflow.
-#  If \text{rev} == \frac{INTMAX}{10}rev==
-#  10
-#  INTMAX
-#   , then temp = \text{rev} \cdot 10 + \text{pop}temp=rev⋅10+pop will overflow if and only if \text{pop} > 7pop>7
-#   Similar logic can be applied when \text{rev}rev is negative.
