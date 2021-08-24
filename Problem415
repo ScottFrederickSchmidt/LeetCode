@@ -1,0 +1,14 @@
+Runtime: 20 ms, faster than 87.13% of Python online submissions for Add Strings.
+Memory Usage: 13.5 MB, less than 92.06% of Python online submissions for Add Strings.
+
+class Solution(object):
+    def addStrings(self, num1, num2):
+        total=int(num1)+int(num2)
+        return str(total)
+        
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
+        
