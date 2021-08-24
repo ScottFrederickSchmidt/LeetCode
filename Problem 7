@@ -1,14 +1,15 @@
 '''
 https://leetcode.com/problems/two-sum/
-
 '''
 
 
 
 
 
----------------------------
-#My first attempt was correct, but got rejected for being too slow. 
+
+
+----------------------------------------------------------
+#My first attempt was correct, but got rejected for being too slow.
 
 import itertools
 
