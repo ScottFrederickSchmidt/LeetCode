@@ -1,0 +1,10 @@
+Runtime: 4656 ms, faster than 5.10% of Python online submissions for Single Number.
+Memory Usage: 15.8 MB, less than 56.27% of Python online submissions for Single Number.
+
+class Solution(object):
+    def singleNumber(self, nums):
+        print(nums)
+        for n in nums:
+            count=nums.count(n)
+            if count==1:
+                return n
