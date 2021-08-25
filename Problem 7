@@ -1,23 +1,4 @@
 '''
-https://leetcode.com/problems/two-sum/
+PROBLEM7:
+https://leetcode.com/problems/reverse-integer/
 '''
-
-
-
-
-
-
-
-----------------------------------------------------------
-#My first attempt was correct, but got rejected for being too slow.
-
-import itertools
-
-class Solution(object):
-    def twoSum(self, nums, target):
-        index=[] #store indexes to be returned at end
-        for numbers in itertools.combinations(nums,2):
-            if sum(numbers)==target: #if the sum of these numbers 
-                for n in numbers: # find each num in numbers
-                    index.append(nums.index(n)) #add index to 
-        return index #this is the answer
