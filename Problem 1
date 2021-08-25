@@ -6,11 +6,13 @@ This code is an easy rank and was similiar to Project Euler.
 class Solution(object):
     def twoSum(self, nums, target):
         length=len(nums)
+        index=[]
         for i in range(length):
             for j in range(length):
-                if nums[i]+nums[j]==target:
-                    print(target)
-                    return [nums.index(nums[i]), nums.index(nums[j])]
+                if nums[i]+nums[j]==target and i!=j:
+                    index.append(i)
+                    index.append(j)
+                    return index
             
 -----------------------------------
 
