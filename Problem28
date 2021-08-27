@@ -1,10 +1,12 @@
 '''
 Problem28:
 https://leetcode.com/problems/implement-strstr/
-'''
 
 Runtime: 26 ms, faster than 59.08% of Python online submissions for Implement strStr().
 Memory Usage: 14 MB, less than 50.68% of Python online submissions for Implement strStr().
+'''
+
+
 
 class Solution(object):
     def strStr(self, haystack, needle):
