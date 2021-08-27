@@ -6,7 +6,7 @@ Runtime: 26 ms, faster than 59.08% of Python online submissions for Implement st
 Memory Usage: 14 MB, less than 50.68% of Python online submissions for Implement strStr().
 
 No clue how to make this faster.
-My guess is one would use an incriment that would return the index immediately so line 17 would not need to be performed?
+My guess is one would use an incriment that would return the index immediately so line 17 would not need to be performed at all.
 '''
 
 
