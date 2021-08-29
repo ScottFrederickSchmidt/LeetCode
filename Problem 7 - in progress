@@ -1,0 +1,26 @@
+'''
+PROBLEM7:
+https://leetcode.com/problems/reverse-integer/'
+
+
+'''
+
+
+class Solution(object):
+    def reverse(self, x):
+        x=str(abs(x))
+        rev = x[::-1]
+        num=int(rev)
+        
+        if abs(num) < 2**31 and num != 2**31 - 1:
+            return num
+        else:
+            return 0
+        
+        
+        """
+        :type x: int
+        :rtype: int
+        """
+        
+
