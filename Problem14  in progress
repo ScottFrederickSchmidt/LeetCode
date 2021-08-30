@@ -1,0 +1,13 @@
+'''
+Problem14:
+https://leetcode.com/problems/longest-common-prefix/
+'''
+
+for s in string:
+    original=s[0]
+    for i in range(10):
+        if original==s[i]:
+            continue
+        else:
+            print(s[0:i])
+            break
