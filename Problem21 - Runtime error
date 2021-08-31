@@ -1,0 +1,10 @@
+'''
+Problem21:
+https://leetcode.com/problems/merge-two-sorted-lists/
+'''
+
+
+class Solution(object):
+    def mergeTwoLists(self, l1, l2):
+        final=list(l1)+list(l2)
+        return final.sort()
