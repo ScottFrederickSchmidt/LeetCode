@@ -2,7 +2,7 @@
 Problem26
 https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
-Code seems to work but is too low currently.
+Code seems to work but is too slow currently.
 '''
 
 class Solution(object):
