@@ -5,4 +5,4 @@
 
 select person.FirstName, person.LastName, address.City, address.State
 FROM person, address
-WHERE person.Id = address.AddressId;
+WHERE person.PersonId = address.AddressId+1;
