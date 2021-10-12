@@ -23,6 +23,13 @@ Write an SQL query to report all customers who never order anything.
 Return the result table in any order.
 --------------------------------------------------------
 
+# Write your MySQL query statement below
+SELECT Customers.Name FROM Orders
+INNER JOIN Orders 
+ON Customers.Name = Orders.Id
+ORDER BY Orders.CustomerId
+HAVING COUNT(Orders.Id) < 1;
 
 
+--------------------------------------------------------
 
