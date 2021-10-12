@@ -4,7 +4,16 @@
 #Return the result table in any order.
 #There is no address in the address table for the PersonId = 1 so we return null in their city and state.
 #AddressId = 1 contains information about the address of PersonId = 2.
+--------------------------------------------------
 
+#Solution #1: This "solution" is all correct except it only retrieves ONE row not all of them.
+#Therefore, one must use a JOIN and ON statement upon further research.
+SELECT person.FirstName, person.LastName, address.City, address.State
+FROM person, address
+WHERE person.PersonId = address.AddressId+1;
+
+
+#Solution2:
 SELECT person.FirstName, person.LastName, address.City, address.State
 FROM person, address
 WHERE person.PersonId = address.AddressId+1;
