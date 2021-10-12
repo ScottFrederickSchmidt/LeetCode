@@ -5,22 +5,25 @@
 #There is no address in the address table for the PersonId = 1 so we return null in their city and state.
 #AddressId = 1 contains information about the address of PersonId = 2.
 --------------------------------------------------
+#Accepted Final Solution:
+#Runtime: 336 ms, faster than 55.02% of MySQL online submissions for Combine Two Tables.
+#Memory Usage: 0B, less than 100.00% of MySQL online submissions for Combine Two Tables.
 
-#Solution #1: This "solution" is all correct except it only retrieves ONE row not all of them.
-#Therefore, one must use a JOIN and ON statement upon further research.
+
 SELECT person.FirstName, person.LastName, address.City, address.State
-FROM person, address
-WHERE person.PersonId = address.AddressId+1;
+FROM person
+LEFT OUTER JOIN address
+ON person.PersonId = address.AddressId+1;
+
+--------------------------------------------------
 
 
-#Solution2: This was really close to being correct, I just used INNER join instead of outer JOIN:
+#Attempt1: This was really close to being correct, I just used INNER join instead of outer JOIN:
 SELECT person.FirstName, person.LastName, address.City, address.State
 FROM person, address
 INNER JOIN
 person.PersonId = address.AddressId+1;
 
-#Accepted Final Solution:
-SELECT person.FirstName, person.LastName, address.City, address.State
-FROM person
-LEFT OUTER JOIN address
-ON person.PersonId = address.AddressId+1;
+--------------------------------------------------
+
+
