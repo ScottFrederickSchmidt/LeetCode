@@ -13,7 +13,14 @@ FROM person, address
 WHERE person.PersonId = address.AddressId+1;
 
 
-#Solution2:
+#Solution2: This was really close to being correct, I just used INNER join instead of outer JOIN:
 SELECT person.FirstName, person.LastName, address.City, address.State
 FROM person, address
-WHERE person.PersonId = address.AddressId+1;
+INNER JOIN
+person.PersonId = address.AddressId+1;
+
+#Accepted Final Solution:
+SELECT person.FirstName, person.LastName, address.City, address.State
+FROM person
+LEFT OUTER JOIN address
+ON person.PersonId = address.AddressId+1;
