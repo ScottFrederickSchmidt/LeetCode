@@ -23,13 +23,12 @@ Write an SQL query to report all customers who never order anything.
 Return the result table in any order.
 --------------------------------------------------------
 
-# Write your MySQL query statement below
-SELECT Customers.Name FROM Orders
-INNER JOIN Orders 
-ON Customers.Name = Orders.Id
-ORDER BY Orders.CustomerId
-HAVING COUNT(Orders.Id) < 1;
-
+#Runtime: 634 ms, faster than 12.45% of MySQL online submissions for Customers Who Never Order.
+#Combine the tables using INNER JOIN, then find the orders that are null.
+SELECT Name as Customers
+FROM Customers
+LEFT JOIN Orders ON Customers.Id=Orders.CustomerId
+WHERE Orders.CustomerId IS NULL;
 
 --------------------------------------------------------
 
