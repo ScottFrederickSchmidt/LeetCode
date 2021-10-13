@@ -30,5 +30,10 @@ Output:
 | 2  | bob@example.com  |
 +----+------------------+
 Explanation: john@example.com is repeated two times. We keep the row with the smallest Id = 1.
-
 -----------------------------------
+
+#I had to use Stackoverflow to solve this problem (found a similiar one):
+#Runtime: 1596 ms, faster than 57.11% of MySQL online submissions for Delete Duplicate Emails.
+
+DELETE p1 FROM Person p1, Person p2 
+WHERE p1.Id > p2.Id AND p1.Email=p2.Email;
