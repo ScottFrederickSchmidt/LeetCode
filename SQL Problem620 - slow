@@ -39,7 +39,7 @@ The movie with ID = 3 is boring so we don't include it in the answer.
 ------------------------------------------------
 
 #Runtime: 246 ms, faster than 24.35% of MySQL online submissions for Not Boring Movies.
-#This one was easy to solve, but my solution was rather slow:
+#This one was the easiest to solve, but my solution could be improved:
 
 SELECT * FROM Cinema 
 WHERE id % 2 <> 0 
