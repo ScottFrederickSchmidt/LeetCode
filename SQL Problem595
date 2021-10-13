@@ -20,4 +20,6 @@ For example, according to the above table, we should output:
 +--------------+-------------+--------------+
 
 #####################################################
-SOLUTION:
+SOLUTION: Runtime: 318 ms, faster than 21.97% of MySQL online submissions for Big
+SELECT name, population, area FROM World
+WHERE population > 25000000 OR area > 3000000;
