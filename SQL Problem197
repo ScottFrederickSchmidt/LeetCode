@@ -36,7 +36,15 @@ In 2015-01-02, the temperature was higher than the previous day (10 -> 25).
 In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
 ---------------------------------------------------------------
 
-#My Initial Answer. This was was getting the correct days almost everytime, unsure why it failed:
+#Final Solution:
+#Runtime: 517 ms, faster than 29.59% of MySQL online submissions
+SELECT W1.Id
+FROM Weather W1, Weather W2
+WHERE DATEDIFF(W1.RecordDate,W2.RecordDate)=1
+AND W1.Temperature > W2.Temperature;
+
+#My Initial Answer. This was was getting the correct days almost everytime, but would fail at the beginning of a new month.
+#Therefore, DATEDIFF is needed. 
 SELECT W1.Id FROM Weather W1, Weather W2
 WHERE W1.RecordDate-W2.RecordDate=1
 AND W1.Temperature > W2.Temperature;
