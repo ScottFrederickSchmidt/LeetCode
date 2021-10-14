@@ -26,7 +26,9 @@ The students should not be counted duplicate in each course.
 ----------------------------------------------------------
 SOLUTION:
 
-#This passes the first test but not the entire test:
+
+
+#My initial solution solves first test but not the entire test:
 SELECT class
 FROM courses
 HAVING COUNT(class)>=5;
