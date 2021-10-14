@@ -38,6 +38,14 @@ Result table:
 (2, B) and (4, D) were changed from 'f' to 'm'.
 
 --------------------------------------------
-SOLUTION:
+SOLUTION: This was the first time that I used a SQL case statement (normally I use PythonJava)
+#Therefore, I need to review this problem again at a later day  (SS, 10.14.21).
+
+UPDATE SALARY
+SET
+    sex= CASE sex 
+        WHEN 'm' THEN 'f'
+        WHEN 'f' THEN 'm'
+    END;
 
 
