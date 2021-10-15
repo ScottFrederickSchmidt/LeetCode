@@ -44,6 +44,18 @@ Output:
 +---------------------+
 --------------------------------
 
+
+
+
+---------------------
+#This incorrect solution using the IFNULL syntax wrong: 
+SELECT DISTINCT 
+salary, IFNULL(NULL, 'null') AS "SecondHighestSalary"
+FROM Employee 
+ORDER BY salary DESC 
+LIMIT 1 OFFSET 1
+
+---------------------
 #This easily selects the first two highest values:
 SELECT salary AS "SecondHighestSalary"
 FROM Employee
