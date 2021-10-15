@@ -49,5 +49,6 @@ SELECT salary AS "SecondHighestSalary"
 FROM Employee
 ORDER BY salary DESC LIMIT 2;
 
-#The question becomes how to select only the second one now. 
+#The challenge becomes how to select only the second highest salary now. 
 #Using a LIMIT 2, 1 was a solution I saw on StackOverflow, but it selected the wrong value.
+#Using LIMIT 1, 1 selected the right value but Leetcode said my "final" solution was wrong when I pressed submit.
