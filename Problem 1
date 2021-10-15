@@ -3,8 +3,9 @@ https://leetcode.com/problems/two-sum/submissions/
 This code is an easy rank and was similiar to Project Euler.
 '''
 
-Runtime: 3520 ms, faster than 29.97% of Python online submissions for Two Sum.
-Memory Usage: 14.3 MB, less than 48.23% of Python online submissions for Two Sum.
+#Final Solution:
+#Runtime: 3520 ms, faster than 29.97% of Python online submissions for Two Sum.
+#Memory Usage: 14.3 MB, less than 48.23% of Python online submissions for Two Sum.
 
 class Solution(object):
     def twoSum(self, nums, target):
@@ -19,7 +20,7 @@ class Solution(object):
             
 -----------------------------------
 
-# This way is slow because there is no need to check every combo.
+# My initial solution was slow because there is no need to check every combo.
 # Therefore, this solution gets rejected due to speed.
 
 import itertools
