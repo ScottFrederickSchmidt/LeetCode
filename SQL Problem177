@@ -46,12 +46,15 @@ Output:
 +------------------------+
 
 -------------------------------
-SOLUTION:
+SOLUTION: Using the below SO link I decided this was the most readable solution:
+https://stackoverflow.com/questions/16568/how-to-select-the-nth-row-in-a-sql-database-table
 
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   RETURN (
       # Write your MySQL query statement below.
-     
+     SELECT  salary FROM employee
+      ORDER BY salary
+      LIMIT 1 OFFSET N;
   );
 END
