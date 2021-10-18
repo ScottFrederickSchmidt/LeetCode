@@ -35,4 +35,9 @@ Note that the result table has 13 columns (1 for the department id + 12 for the 
 
 ------------------------------------------
 
-
+#This below would solve one month, the difficult part becomes how to write this problem efficently for EACH month using the least amount of code:
+SELECT id, 
+sum(revenue) as Jan_Revenue
+FROM department
+WHERE month="Jan"
+GROUP BY id;
