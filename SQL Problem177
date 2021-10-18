@@ -58,3 +58,8 @@ BEGIN
       LIMIT 1 OFFSET N;
   );
 END
+
+#Now, one must decrease N by one value using:
+DECLARE starting_index INT; 
+      SET starting_index=N-1;
+
