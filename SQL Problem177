@@ -49,15 +49,19 @@ Output:
 SOLUTION: After research on the SO link below, there was an easy to read post that helped:
 https://stackoverflow.com/questions/16568/how-to-select-the-nth-row-in-a-sql-database-table
 
+#Runtime: 388 ms, faster than 32.14% of MySQL online submissions for Nth Highest Salary:
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
  SET N=N-1;
   RETURN (  
       SELECT  IFNULL(
           (SELECT salary FROM employee
-        ORDER BY salary
+        ORDER BY salary DESC
       LIMIT 1 OFFSET N), NULL)
   );
 END
 
+
+#NOTES:
 #The N value must minus one because it grabs the second highest salary.
+#DESC must be used so the salaries go from high to low. ASC is default. 
