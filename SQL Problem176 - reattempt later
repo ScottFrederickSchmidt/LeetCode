@@ -44,8 +44,12 @@ Output:
 +---------------------+
 --------------------------------
 
-
-
+#SOLUTION: Runtime: 399 ms, faster than 5.41% of MySQL online submissions for Second Highest Salary.
+SELECT IFNULL(
+(SELECT DISTINCT salary 
+FROM Employee 
+ORDER BY salary DESC 
+LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary;
 
 ---------------------
 #This incorrect solution using the IFNULL syntax wrong: 
