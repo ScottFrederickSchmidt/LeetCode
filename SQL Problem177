@@ -46,7 +46,7 @@ Output:
 +------------------------+
 
 -------------------------------
-SOLUTION: Using the below SO link I decided this was the most readable solution:
+SOLUTION: After research, using the SO link below, I decided this was the most readable solution:
 https://stackoverflow.com/questions/16568/how-to-select-the-nth-row-in-a-sql-database-table
 
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
