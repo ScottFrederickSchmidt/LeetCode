@@ -42,6 +42,7 @@ Output:
 | 3.50  | 4    |
 +-------+------+
 ---------------------------------
+
 This solution must use a RANK() function:
 RANK() OVER (
    [PARTITION BY expression, ]
