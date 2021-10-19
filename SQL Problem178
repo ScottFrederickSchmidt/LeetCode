@@ -42,5 +42,21 @@ Output:
 | 3.50  | 4    |
 +-------+------+
 ---------------------------------
-SOLUTION:
+This solution must use a RANK() function:
+RANK() OVER (
+   [PARTITION BY expression, ]
+   ORDER BY expression (ASC | DESC) );
+Source: https://www.geeksforgeeks.org/rank-function-in-sql-server/
+
+After further research, one has to use DENSE_RANK to fully solve the problem:
+rank() : It is used to rank a record within a group of rows.
+dense_rank() : The DENSE_RANK function acts like the RANK function except that it assigns consecutive ranks.
+https://stackoverflow.com/questions/11183572/whats-the-difference-between-rank-and-dense-rank-functions-in-oracle
+
+----------------------------------
+#FINAL SOLUTION: Runtime: 257 ms, faster than 64.70% of MySQL online submissions for Rank Scores.
+SELECT Score, DENSE_RANK() OVER (ORDER BY score DESC ) as 'Rank' 
+FROM Scores;
+
+
 
