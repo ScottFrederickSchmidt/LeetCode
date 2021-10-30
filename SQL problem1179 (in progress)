@@ -34,10 +34,23 @@ Result table:
 Note that the result table has 13 columns (1 for the department id + 12 for the months).
 
 ------------------------------------------
+#This problem requires a CASE becauase the SUM is going to vary based on each different month.
+#The AS statement will select a different column everytime as a new sum based upon each month.
+#Then each id must be GROUPED and ORDERED at the very end by id.
 
-#This below would solve one month, the difficult part becomes how to write this problem efficently for EACH month using the least amount of code:
 SELECT id, 
-sum(revenue) as Jan_Revenue
+SUM(case when month="Jan" then revenue else null end) as "Jan_revenue",
+SUM(case when month="Feb" then revenue else null end) as "Feb_revenue",
+SUM(case when month="Mar" then revenue else null end) as "Mar_revenue",
+SUM(case when month="Apr" then revenue else null end) as "Apr_revenue",
+SUM(case when month="May" then revenue else null end) as "May_revenue",
+SUM(case when month="Jun" then revenue else null end) as "Jun_revenue",
+SUM(case when month="Jul" then revenue else null end) as "Jul_revenue",
+SUM(case when month="Aug" then revenue else null end) as "Aug_revenue",
+SUM(case when month="Sep" then revenue else null end) as "Sep_revenue",
+SUM(case when month="Oct" then revenue else null end) as "Oct_revenue",
+SUM(case when month="Nov" then revenue else null end) as "Nov_revenue",
+SUM(case when month="Dec" then revenue else null end) as "Dec_revenue"
 FROM department
-WHERE month="Jan"
-GROUP BY id;
+GROUP BY id
+ORDER BY id;
