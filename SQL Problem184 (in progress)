@@ -54,12 +54,18 @@ Output:
 | IT         | Max      | 90000  |
 +------------+----------+--------+
 Explanation: Max and Jim both have the highest salary in the IT department and Henry has the highest salary in the Sales department.
----------------------------------------------
 
-#My initial solution writing a quick query in a minute was the answer should look something like this:
-SELECT salary
-FROM Employee
-INNER JOIN Department
-ON Employee.name=Department.Name
-GROUP BY department.name
-LIMIT 1;
+
+---------------------------------------------
+'''
+This is the first MEDIUM level problem that must use a subquery! 
+The first step is getting the output to select the correct criteria from both tables. 
+This involves using an INNER JOIN which will combine the two tables on departmentId.
+'''
+SELECT e.name as "Employee", d.name as "Department", e.salary
+FROM employee e INNER JOIN department d
+ON e.departmentId=d.id;
+
+
+
+
