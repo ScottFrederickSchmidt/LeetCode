@@ -60,12 +60,22 @@ Explanation: Max and Jim both have the highest salary in the IT department and H
 '''
 This is the first MEDIUM level problem that must use a subquery! 
 The first step is getting the output to select the correct criteria from both tables. 
-This involves using an INNER JOIN which will combine the two tables on departmentId.
-'''
+This involves using an INNER JOIN which will combine the two tables on departmentId:
+
 SELECT e.name as "Employee", d.name as "Department", e.salary
 FROM employee e INNER JOIN department d
 ON e.departmentId=d.id;
 
+The second part will use a subquery that will search for the highest salary in the dept:
+AND (departmentId, salary) IN (SELECT departmentId, max(salary) FROM employee GROUP BY departmentId);
+'''
 
+#FINAL SOLUTION Runtime: 989 ms, faster than 10.50% of MySQL online submissions for Department Highest Salary:
+SELECT e.name as "Employee", d.name as "Department", e.salary
+FROM employee e INNER JOIN department d
+ON e.departmentId=d.id
+AND (departmentId, salary) IN 
+(SELECT departmentId, max(salary) 
+FROM employee GROUP BY departmentId);
 
 
