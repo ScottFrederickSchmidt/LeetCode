@@ -79,8 +79,7 @@ FROM employee e
 INNER JOIN department d
 ON e.id=d.id;
 
-#Note: After some research, I realized this first part is incorrect.
-#Since the subquery is going to need to use e2, below is correct code:
+#However, Since the subquery is going to need to use e2, below is correct code:
 
 SELECT    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
 FROM Employee e1
@@ -89,5 +88,26 @@ JOIN Department d ON e1.DepartmentId = d.Id;
 
 #The second step is the more difficult part (this is rated as a "hard" challenge): 
 #One must use a subquery to find the 3 highest salaries in each department:
-
+    WHERE 3>
+    (
+    SELECT COUNT(DISTINCT e2.salary)
+        FROM employee e2
+        WHERE e2.salary>e1.salary
+        AND e1.DepartmentId=e2.departmentId
+    ) 
+    
+#FINAL SOLUTION: Runtime: 978 ms, faster than 31.74% of MySQL online submissions for Department Top Three Salaries.
+SELECT d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+FROM Employee e1 
+JOIN Department d 
+ON e1.DepartmentId = d.Id
+    WHERE 3>
+    (
+    SELECT COUNT(DISTINCT e2.salary)
+        FROM employee e2
+        WHERE e2.salary>e1.salary
+        AND e1.DepartmentId=e2.departmentId
+    );
+    
+#Note: Most people solved this solution using a DenseRank()
 
