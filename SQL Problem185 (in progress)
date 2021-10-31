@@ -68,13 +68,24 @@ In the Sales department:
 - Henry earns the highest salary
 - Sam earns the second-highest salary
 - There is no third-highest salary as there are only two employees
+
+FIRST HARD LEVEL PROBLEM!!
 ----------------------------------------------------------------
 
 #The first step is to JOIN the employee and department table together:
+
 SELECT e.name as "employee", d.name as "department", e.salary
 FROM employee e
 INNER JOIN department d
 ON e.id=d.id;
+
+#Note: After some research, I realized this first part is incorrect.
+#Since the subquery is going to need to use e2, below is correct code:
+
+SELECT    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+FROM Employee e1
+JOIN Department d ON e1.DepartmentId = d.Id;
+
 
 #The second step is the more difficult part (this is rated as a "hard" challenge): 
 #One must use a subquery to find the 3 highest salaries in each department:
