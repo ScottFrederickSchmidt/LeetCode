@@ -51,13 +51,6 @@ FROM Employee
 ORDER BY salary DESC 
 LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary;
 
----------------------
-#This incorrect solution using the IFNULL syntax wrong: 
-SELECT DISTINCT 
-salary, IFNULL(NULL, 'null') AS "SecondHighestSalary"
-FROM Employee 
-ORDER BY salary DESC 
-LIMIT 1 OFFSET 1
 
 ---------------------
 #This easily selects the first two highest values:
@@ -66,5 +59,4 @@ FROM Employee
 ORDER BY salary DESC LIMIT 2;
 
 #The challenge becomes how to select only the second highest salary now. 
-#Using a LIMIT 2, 1 was a solution I saw on StackOverflow, but it selected the wrong value.
-#Using LIMIT 1, 1 selected the right value but Leetcode said my "final" solution was wrong when I pressed submit.
+#Using LIMIT 1 selects ONE the first row and then OFFESET 1 "deletes" the first row (selecting the second row only).
