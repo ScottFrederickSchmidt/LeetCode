@@ -84,3 +84,14 @@ AND (departmentId, salary) IN
 FROM employee GROUP BY departmentId);
 
 
+------------------
+SPECIAL NOTE:
+This SQL solution gets an error because the subquery returns more than one row:
+
+SELECT DISTINCT d.name as "Department", e.name as "Employee", salary
+FROM department d JOIN employee e
+on e.departmentId=d.id
+AND salary= 
+(SELECT max(salary) FROM employee 
+GROUP BY  d.id );
+
