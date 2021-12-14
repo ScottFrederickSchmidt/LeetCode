@@ -3,9 +3,10 @@ You are given a large integer represented as an integer array digits, where each
 The digits are ordered from most significant to least significant in left-to-right order. 
 The large integer does not contain any leading 0's.
 Increment the large integer by one and return the resulting array of digits
+
 --------------
-1)Get last digit, add one
-2)Change parameter list last number to last digit
+1)Get last_digit, add one
+2)Update list last_digit to last digit
 
 class Solution(object):
     def plusOne(self, digits):
@@ -20,6 +21,28 @@ Explanation: The array represents the integer 9.
 Incrementing by one gives 9 + 1 = 10.
 Thus, the result should be [1,0].
 
-If the last digit is a 9, the list should split into a 1 and 0.
-Therefore, the logic of this problems needs to be slightly changed.
+3)If the last digit is a 9, the list should split into a 1 and 0.
+Therefore, the logic of this problems needs to be slightly changed:
+
+MY FINAL SOLUTION: Runtime: 20 ms, faster than 72.15% of Python online submissions for Plus One.
+
+class Solution(object):
+    def plusOne(self, digits):
+        last=digits[-1]
+        if last is not 9:
+            digits[-1]=last+1
+            return digits
+        else:
+            final=[]
+            s = ''.join(map(str, digits))
+            s = int(s)+1
+            string=str(s)
+            for n in string:
+                final.append(int(n))
+            return final
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        
 
