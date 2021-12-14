@@ -1,0 +1,25 @@
+https://leetcode.com/problems/plus-one/
+You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer.
+The digits are ordered from most significant to least significant in left-to-right order. 
+The large integer does not contain any leading 0's.
+Increment the large integer by one and return the resulting array of digits
+--------------
+1)Get last digit, add one
+2)Change parameter list last number to last digit
+
+class Solution(object):
+    def plusOne(self, digits):
+        last=digits[-1]+1
+        digits[-1]=last
+        return digits
+
+However, this answer fails example 4:
+Input: digits = [9]
+Output: [1,0]
+Explanation: The array represents the integer 9.
+Incrementing by one gives 9 + 1 = 10.
+Thus, the result should be [1,0].
+
+If the last digit is a 9, the list should split into a 1 and 0.
+Therefore, the logic of this problems needs to be slightly changed.
+
