@@ -21,10 +21,11 @@ Explanation: The array represents the integer 9.
 Incrementing by one gives 9 + 1 = 10.
 Thus, the result should be [1,0].
 
-3)If the last digit is a 9, the list should split into a 1 and 0.
-Therefore, the logic of this problems needs to be slightly changed:
+3)The trick part! 
+If the last digit is a 9, the list should split into a 1 and 0. And 99+1=[1, 0, 0]
+Therefore, one must change the digits into an int, add one, and then back into a list again.
 
-MY FINAL SOLUTION: Runtime: 20 ms, faster than 72.15% of Python online submissions for Plus One.
+MY FINAL SOLUTION in PYTHON: Runtime: 20 ms, faster than 72.15% of Python online submissions for Plus One.
 
 class Solution(object):
     def plusOne(self, digits):
