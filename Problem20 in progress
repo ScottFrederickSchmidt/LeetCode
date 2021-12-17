@@ -25,3 +25,26 @@ class Solution(object):
                 return False
         return True # Cycled through entire s String without discovering a False statement
         
+'''
+My attempt two using a dictionary gets the correct answer initially, but then gets runTime error on the following line: 
+    if dic[temp]==x:
+'''
+Class Solution(object):
+    def isValid(self, s):
+        if not s or len(s)%2!=0:
+            return False
+        
+        dic={'(':')', '[':']', '{':'}' }
+        keys=dic.keys
+        #print(keys)
+        temp=''
+        for x in s:
+            if x in dic:
+                temp=temp+x
+            else:
+                if dic[temp]==x:
+                    temp=''
+                else:
+                    return False
+        return True
+        
