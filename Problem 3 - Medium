@@ -1,0 +1,61 @@
+'''
+LeetCode3: Longest Substring Without Repeating Characters, first medium problem.
+Given a string s, find the length of the longest substring without repeating characters.
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+'''
+
+
+
+# FIRST ATTEMPT, INCORRECT!
+def lengthOfLongestSubstring(s):
+    start=0
+    maxNum=1
+    l=[]
+    end=1
+    while start<len(s)-1:
+        print(s[end], " ", s[start:end])
+        if s[end] not in s[start:end] and start!=end:
+            l.append(end-start+1)
+            end=end+1
+        else:
+            start=start+1
+            print(start, " is the new start")
+    print(l)
+    return max(l)
+
+s="pwwkew"    
+test=lengthOfLongestSubstring(s)
+print(test)
+
+'''
+b   a
+c   ab
+a   abc
+1  is the new start
+a   bc
+b   bca
+2  is the new start
+b   ca
+c   cab
+3  is the new start
+c   ab
+b   abc
+4  is the new start
+b   bc
+5  is the new start
+b   c
+b   cb
+6  is the new start
+b   b
+7  is the new start
+[2, 3, 3, 3, 3, 2]
+3
+'''
