@@ -12,6 +12,26 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 '''
 
+# FINAL SOLUTION:
+def lengthOfLongestSubstring(s):
+    chars=set() #keep track of the new substrings
+    maxNum=0 #will store answer
+    i=0 #track index on the left, will need to delete duplicate at some point.
+    for r in range(len(s)):
+        while s[r] in chars:
+            chars.remove(s[i]) # remove the duplicate letter at beginning of substring
+            #print("removed ", s[r])
+            i=i+1 # next index num needs tracked
+        chars.add(s[r]) # add unique letter so substring
+        #print(" added ", s[r])
+        maxNum=max(maxNum, r-i+1) # check new max number
+    return maxNum #returns final answer
+
+s="pwwkew" #s="abcabcbb"   
+test=lengthOfLongestSubstring(s)
+print(test)
+
+
 
 
 # FIRST ATTEMPT, INCORRECT!
