@@ -1,5 +1,5 @@
 '''
-LeetCode3: Longest Substring Without Repeating Characters, first medium problem.
+LeetCode3: Longest Substring Without Repeating Characters.
 Given a string s, find the length of the longest substring without repeating characters.
 
 Input: s = "abcabcbb"
@@ -33,8 +33,11 @@ print(test)
 
 
 
+'''
+ FIRST ATTEMPT, INCORRECT
+ This was one of my first medium level leetcode problems so further research had to be done to get the above solution
+'''
 
-# FIRST ATTEMPT, INCORRECT!
 def lengthOfLongestSubstring(s):
     start=0
     maxNum=1
