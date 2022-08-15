@@ -5,6 +5,7 @@ The large integer does not contain any leading 0's.
 Increment the large integer by one and return the resulting array of digits
 
 --------------
+'''
 1)Get last_digit, add one
 2)Update list last_digit to last digit
 
@@ -26,7 +27,7 @@ If the last digit is a 9, the list should split into a 1 and 0. And 99+1=[1, 0, 
 Therefore, one must change the digits into an int, add one, and then back into a list again.
 
 MY FINAL SOLUTION in PYTHON: Runtime: 20 ms, faster than 72.15% of Python online submissions for Plus One.
-
+'''
 class Solution(object):
     def plusOne(self, digits):
         last=digits[-1]
