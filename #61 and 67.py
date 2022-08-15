@@ -47,4 +47,15 @@ class Solution(object):
         :rtype: List[int]
         """
         
+        
+        
+ ---------------
+# Add Binary: https://leetcode.com/problems/add-binary/
+class Solution(object):
+    def addBinary(self, a, b):
+        val=int(a, 2)+int(b, 2)
+        val=bin(val)
+        return val[2::]
+        
+        
 
