@@ -1,11 +1,8 @@
 '''
 LeetCode21:  https://leetcode.com/problems/merge-two-sorted-lists/
 This is the most common Amazon interview question and an important concept to data structures.
-Here is the most simple answer I can find:
-https://www.youtube.com/watch?v=XIdigk956u0
-
-I am still in process of reverse engineering this problem but here is the best solution in my opinon.
 '''
+
 class Solution(object):
     def mergeTwoLists(self, list1, list2):        
         dummy = ListNode()
