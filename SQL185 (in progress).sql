@@ -72,6 +72,7 @@ In the Sales department:
 
 ----------------------------------------------------------------
 #FIRST HARD LEVEL PROBLEM! Need to redo this problem on a later date.
+
 #1)The first step is to JOIN the employee and department table together:
 SELECT e.name as "employee", d.name as "department", e.salary
 FROM employee e
@@ -84,9 +85,7 @@ SELECT    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
 FROM Employee e1
 JOIN Department d ON e1.DepartmentId = d.Id;
 
-
-#2)The second step is the more difficult part (this is rated as a "hard" challenge): 
-#One must use a subquery to find the 3 highest salaries in each department:
+#2) Use subquery to find the 3 highest salaries in EACH department:
     WHERE 3>
     (
     SELECT COUNT(DISTINCT e2.salary)
