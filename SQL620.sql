@@ -38,9 +38,6 @@ We have three movies with odd-numbered ID: 1, 3, and 5.
 The movie with ID = 3 is boring so we don't include it in the answer.
 ------------------------------------------------
 
-#Runtime: 246 ms, faster than 24.35% of MySQL online submissions for Not Boring Movies.
-#This one was the easiest to solve, but my solution could be improved:
-
 SELECT * FROM Cinema 
 WHERE id % 2 <> 0 
 AND description <> 'boring'
