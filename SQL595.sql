@@ -23,3 +23,11 @@ For example, according to the above table, we should output:
 SOLUTION: Runtime: 318 ms, faster than 21.97% of MySQL online submissions for Big
 SELECT name, population, area FROM World
 WHERE population > 25000000 OR area > 3000000;
+
+
+
+#####################################################
+# https://leetcode.com/problems/find-customer-referee/submissions/
+# LeetCode 584 
+SELECT name FROM customer
+WHERE referee_id !=2 or referee_id is null;
