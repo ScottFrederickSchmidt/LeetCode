@@ -1,3 +1,9 @@
+# https://leetcode.com/problems/find-customer-referee/submissions/
+# LeetCode 584 
+SELECT name FROM customer
+WHERE referee_id !=2 or referee_id is null;
+
+#####################################################
 #SQL Problem595  https://leetcode.com/problems/big-countries/
 There is a table World:
 +-----------------+------------+------------+--------------+---------------+
@@ -25,9 +31,3 @@ SELECT name, population, area FROM World
 WHERE population > 25000000 OR area > 3000000;
 
 
-
-#####################################################
-# https://leetcode.com/problems/find-customer-referee/submissions/
-# LeetCode 584 
-SELECT name FROM customer
-WHERE referee_id !=2 or referee_id is null;
