@@ -12,3 +12,11 @@ FROM orders
 GROUP BY customer_number
 order by count(customer_number)
 DESC LIMIT 1;
+
+
+#https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/
+#SQL 1050
+SELECT a.actor_id, a.director_id
+FROM ActorDirector a
+GROUP BY a.actor_id, a.director_id
+HAVING count(*)>2;
