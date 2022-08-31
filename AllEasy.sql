@@ -20,3 +20,11 @@ SELECT a.actor_id, a.director_id
 FROM ActorDirector a
 GROUP BY a.actor_id, a.director_id
 HAVING count(*)>2;
+
+
+#https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/
+#SQL 1581
+SELECT customer_id, count(visit_id) as 'count_no_trans'
+FROM visits 
+WHERE visit_id NOT IN (select distinct transactions.visit_id from transactions)
+GROUP BY customer_id ORDER BY count_no_trans;
