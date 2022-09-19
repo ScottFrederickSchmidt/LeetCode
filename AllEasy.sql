@@ -28,3 +28,10 @@ SELECT customer_id, count(visit_id) as 'count_no_trans'
 FROM visits 
 WHERE visit_id NOT IN (select distinct transactions.visit_id from transactions)
 GROUP BY customer_id ORDER BY count_no_trans;
+
+https://leetcode.com/problems/sales-person/
+SQL 607:  Retry Later:
+SELECT name FROM salesPerson WHERE sales_id NOT IN (
+SELECT sales_id FROM orders o INNER JOIN company c
+    ON o.com_id=c.com_id WHERE c.name= "RED"
+) ;
