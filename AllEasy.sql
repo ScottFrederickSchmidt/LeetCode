@@ -40,3 +40,10 @@ WHERE s.sales_id NOT IN (
     WHERE c.name = 'RED'
 );
 
+# https://leetcode.com/problems/sales-analysis-iii/
+SELECT product.product_id, product.product_name FROM product
+INNER JOIN sales 
+ON product.product_id=sales.product_id
+GROUP BY sales.product_id
+HAVING min(sales.sale_date) >= "2019-01-01"
+AND max(sales.sale_date) <="2019-03-31";
