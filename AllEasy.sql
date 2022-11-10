@@ -47,3 +47,8 @@ ON product.product_id=sales.product_id
 GROUP BY sales.product_id
 HAVING min(sales.sale_date) >= "2019-01-01"
 AND max(sales.sale_date) <="2019-03-31";
+
+SELECT DISTINCT (author_id) as id 
+FROM views
+WHERE author_id=viewer_id
+order by id asc;
