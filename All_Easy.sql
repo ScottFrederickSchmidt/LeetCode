@@ -29,16 +29,7 @@ FROM visits
 WHERE visit_id NOT IN (select distinct transactions.visit_id from transactions)
 GROUP BY customer_id ORDER BY count_no_trans;
 
-https://leetcode.com/problems/sales-person/
-SELECT s.name 
-FROM salesperson s
-WHERE s.sales_id NOT IN (
-    SELECT o.sales_id 
-    FROM orders o
-    INNER JOIN company c
-    ON o.com_id = c.com_id
-    WHERE c.name = 'RED'
-);
+
 
 # https://leetcode.com/problems/sales-analysis-iii/
 SELECT product.product_id, product.product_name FROM product
@@ -60,3 +51,9 @@ SELECT patient_id, patient_name, conditions
 FROM patients
 WHERE conditions LIKE '% DIAB1%'
 OR conditions LIKE 'DIAB1%';
+
+#https://leetcode.com/problems/recyclable-and-low-fat-products/submissions/
+SELECT product_id
+FROM products
+WHERE low_fats = 'Y'
+AND recyclable = 'Y';
