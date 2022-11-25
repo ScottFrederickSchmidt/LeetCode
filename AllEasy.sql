@@ -48,7 +48,14 @@ GROUP BY sales.product_id
 HAVING min(sales.sale_date) >= "2019-01-01"
 AND max(sales.sale_date) <="2019-03-31";
 
+
+# https://leetcode.com/problems/patients-with-a-condition/
 SELECT DISTINCT (author_id) as id 
 FROM views
 WHERE author_id=viewer_id
 order by id asc;
+
+#https://leetcode.com/problems/patients-with-a-condition/
+SELECT patient_id, patient_name, conditions
+FROM patients
+WHERE conditions LIKE '%DIAB1%';
