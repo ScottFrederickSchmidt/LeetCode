@@ -1,3 +1,5 @@
+These problems are 'easy' that require little to no explanation. 
+
 #https://leetcode.com/problems/game-play-analysis-i/
 #SQL 511
 SELECT player_id, min(event_date) AS "first_login" 
@@ -30,7 +32,6 @@ WHERE visit_id NOT IN (select distinct transactions.visit_id from transactions)
 GROUP BY customer_id ORDER BY count_no_trans;
 
 
-
 # https://leetcode.com/problems/sales-analysis-iii/
 SELECT product.product_id, product.product_name FROM product
 INNER JOIN sales 
@@ -57,3 +58,8 @@ SELECT product_id
 FROM products
 WHERE low_fats = 'Y'
 AND recyclable = 'Y';
+
+# https://leetcode.com/problems/find-total-time-spent-by-each-employee/submissions/
+SELECT event_day as day, emp_id, sum(out_time-in_time) as total_time
+FROM employees
+GROUP BY emp_id, event_day;
