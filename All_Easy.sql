@@ -63,3 +63,10 @@ AND recyclable = 'Y';
 SELECT event_day as day, emp_id, sum(out_time-in_time) as total_time
 FROM employees
 GROUP BY emp_id, event_day;
+
+# https://leetcode.com/problems/the-latest-login-in-2020/description/
+SELECT user_id, max(time_stamp) as last_stamp
+FROM logins
+WHERE year(time_stamp)= 2020
+GROUP BY user_id;
+
