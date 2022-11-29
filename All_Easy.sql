@@ -70,3 +70,8 @@ FROM logins
 WHERE year(time_stamp)= 2020
 GROUP BY user_id;
 
+# https://leetcode.com/problems/daily-leads-and-partners/description/
+SELECT date_id, make_name, count(DISTINCT(lead_id)) as unique_leads, count(DISTINCT(partner_id)) as unique_partners
+FROM dailysales
+GROUP BY date_id, make_name;
+
