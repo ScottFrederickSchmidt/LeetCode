@@ -75,3 +75,7 @@ SELECT date_id, make_name, count(DISTINCT(lead_id)) as unique_leads, count(DISTI
 FROM dailysales
 GROUP BY date_id, make_name;
 
+#https://leetcode.com/problems/find-followers-count/description/
+SELECT user_id, count(distinct(follower_id)) as followers_count
+FROM followers
+GROUP BY user_id;
